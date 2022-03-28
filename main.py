@@ -8,6 +8,11 @@ def add(x, y):
     return x + y
 
 
+@dispatch(tuple)
+def add(x):
+    return x
+
+
 @dispatch(int)
 def add(x):
     return x
@@ -28,3 +33,4 @@ if __name__ == '__main__':
     print(add(1, 'hello'))
     print(add(1))
     print(add(None))
+    print(add(('1', '2')))
